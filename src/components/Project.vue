@@ -20,7 +20,7 @@ const navs = [
 </script>
 
 <template>
-  <div class="px-16 flex flex-col gap-12">
+  <div class="px-16 flex flex-col gap-12 py-16">
     <div class="flex gap-8 text-sm">
       <button
         v-for="nav in navs"

@@ -54,7 +54,7 @@ const resumes = [
 </script>
 
 <template>
-  <div class="px-6">
+  <div class="px-6 pt-16">
     <ol class="relative border-s px-6 border-hint/10">
       <li class="mb-10 ms-4" v-for="resume in resumes">
         <div

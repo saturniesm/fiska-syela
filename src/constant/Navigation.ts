@@ -13,7 +13,7 @@ export const TECHNOLOGY = {
   IMAPS: 'imaps',
   EPROC: 'eproc',
   LSM: 'lsm',
-  SYGAP: 'eproc',
+  SYGAP: 'sygap',
   DIGI: 'digi',
   GRANTHA: 'grantha',
 }

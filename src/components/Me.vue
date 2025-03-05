@@ -11,6 +11,7 @@ let jobIndex = 0
 let charIndex = 0
 let isDeleting = false
 const jobDesc = ['Frontend Developer', 'UI/UX Designer', 'Writer', 'Student', 'Just a Girl']
+
 const navigation = [
   {
     active_color: 'green',
@@ -31,6 +32,7 @@ const navigation = [
     ref: '#projects',
   },
 ]
+
 const socialMedia = [
   {
     link: 'https://instagram.com/yourhandle',
@@ -132,7 +134,7 @@ onMounted(typeEffect)
   <ul class="flex items-end gap-5">
     <li v-for="social in socialMedia" :class="layoutStore.navigationClass('text')">
       <a :href="social.link" target="_blank" rel="noopener noreferrer" :aria-label="social.label">
-        <Icon :icon="social.icon" class="w-6 h-6" />
+        <Icon :icon="social.icon" class="w-6 h-6 scale-hover" />
       </a>
     </li>
   </ul>

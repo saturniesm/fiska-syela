@@ -5,7 +5,7 @@ const layoutStore = useLayoutStore()
 </script>
 
 <template>
-  <article class="flex flex-col gap-6 text-justify text-sm/6 text-hint/60 px-16">
+  <article class="flex flex-col gap-6 text-justify text-sm/6 text-hint/60 px-16 pt-16">
     <p class="text-justify">
       I am a Frontend Developer with 2 years of experience, specializing in
       <span class="font-semibold" :class="layoutStore.navigationClass('text')"

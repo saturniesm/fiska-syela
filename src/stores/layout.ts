@@ -26,6 +26,11 @@ export const useLayoutStore = defineStore('layout', () => {
         [NAVIGATION.PROJECT]: 'border-primary-pink',
         [NAVIGATION.EXP]: 'border-primary-purple',
       },
+      'border-hover': {
+        [NAVIGATION.ABOUT]: 'hover:border-primary-green',
+        [NAVIGATION.PROJECT]: 'hover:border-primary-pink',
+        [NAVIGATION.EXP]: 'hover:border-primary-purple',
+      },
       background: {
         [NAVIGATION.ABOUT]: 'bg-primary-green',
         [NAVIGATION.PROJECT]: 'bg-primary-pink',

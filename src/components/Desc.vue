@@ -54,7 +54,7 @@ const descriptions = [
         <h3 class="font-semibold text-lg leading-none" :class="layoutStore.navigationClass('text')">
           {{ desc.title }}
         </h3>
-        <p class="text-justify text-sm text-hint/60">{{ desc.desc }}</p>
+        <p class="text-justify text-sm text-hint/80">{{ desc.desc }}</p>
         <ul class="flex flex-wrap gap-2 text-sm">
           <li
             v-for="skill in desc.skill"
