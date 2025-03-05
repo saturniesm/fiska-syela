@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary-green: #d0ff5f;
+  --color-primary-purple: #8d7eff;
+  --color-primary-pink: #b97fef;
+  --color-background: #202020;
+  --color-hint: #ebebeb;
+  --color-mint: #202020;
+  --color-rock: #7E7E7E;
+
+  --font-inter: 'Inter', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #202020;
+}
+
+@layer base {
+  html {
+    @apply text-gray-800 font-inter;
+  }
+}
+
+li {
+  @apply cursor-pointer;
+}
+
+.list-space {
+  @apply flex gap-2.5 items-center;
+}
+
+.scale-hover {
+  @apply transition-transform duration-200 hover:scale-130 origin-left;
+}
