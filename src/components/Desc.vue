@@ -8,37 +8,37 @@ const descriptions = [
   {
     title: 'IMAPS - Asset Management System',
     desc: 'Asset management solution for BPJS, built with Angular. It handles assets from acquisition to disposal, including mutations such as updates to asset details, ensuring efficient management throughout the asset lifecycle.',
-    img: '',
+    img: 'images/imaps.png',
     skill: ['AngularJS', 'Daisy UI', 'NG-ZORRO', 'Tailwind CSS'],
   },
   {
     title: 'E-Procurement - Procurement Management System',
     desc: 'The e-Procurement system for Telkomsigma is a comprehensive internal solution that tracks the entire procurement process—from initial requests and supplier selection to order approvals, inventory management, and invoice tracking. It streamlines complex procurement workflows, ensuring efficiency, transparency, and full control over purchasing activities.',
-    img: '',
+    img: 'images/e-proc.png',
     skill: ['Nuxt', 'Pinia', 'Vueform', 'Tailwind CSS', 'VeeValidate'],
   },
   {
     title: 'LSM - Asset Management System',
     desc: 'LSM Asset Management is a comprehensive system for Telkomsigma that handles the entire asset lifecycle. From the initial acquisition of assets, it tracks their movement, mutations, insurance details, repairs, and disposals. The system also includes asset checklists to ensure all necessary steps are followed for each asset’s maintenance and management, offering complete visibility and control over the assets throughout their lifecycle.',
-    img: '',
+    img: 'images/lsm.png',
     skill: ['Nuxt', 'Pinia', 'Vueform', 'Tailwind CSS', 'VeeValidate'],
   },
   {
     title: 'Sygap - Ticketing Management System',
     desc: 'Sygap is a ticketing management system that covers Change Management (PBI), Knowledge Management, and CMBD. It streamlines handling change requests, manages knowledge sharing, and tracks IT assets and configurations for better IT service management.',
-    img: '',
+    img: 'images/sygap.png',
     skill: ['Vue', 'Pinia', 'Vueform', 'Tailwind CSS', 'VeeValidate'],
   },
   {
     title: 'Digipactum - Contract Management System',
     desc: 'Digipactum is a contract management system that simplifies the creation, storage, and management of contracts. It helps streamline the entire contract lifecycle, from drafting and negotiation to execution and renewal. The system ensures better compliance, faster approvals, and easy tracking of contract terms and obligations, improving efficiency and reducing risks in contract handling.',
-    img: '',
+    img: 'images/digipactum.png',
     skill: ['Nuxt', 'Pinia', 'PrimeVue', 'Tailwind CSS', 'VeeValidate'],
   },
   {
     title: 'Grantha - Document Management System',
     desc: 'Grantha is a document management system that organizes, stores, and manages digital documents. It features secure access, advanced search, and collaboration tools to streamline document handling and improve productivity.',
-    img: '',
+    img: 'images/grantha.png',
     skill: ['Nuxt', 'Pinia', 'PrimeVue', 'Tailwind CSS', 'VeeValidate'],
   },
 ]
@@ -46,12 +46,16 @@ const descriptions = [
 
 <template>
   <section class="flex flex-col gap-6 w-full transition-colors duration-600">
-    <article v-for="desc in descriptions" :key="desc.title" class="flex gap-2 w-full group">
-      <figure class="w-1/4">
-        <img :src="desc.img" :alt="desc.title" class="w-full" />
+    <article
+      v-for="desc in descriptions"
+      :key="desc.title"
+      class="flex lg:flex-row flex-col gap-2 w-full group"
+    >
+      <figure class="lg:w-1/4 lg:py-4">
+        <img :src="desc.img" :alt="desc.title" class="w-full lg:rounded-md" />
       </figure>
       <div
-        class="flex flex-col text-sm w-3/4 gap-4 p-4 rounded-xl transition-colors duration-300"
+        class="flex flex-col text-sm lg:w-3/4 gap-4 lg:p-4 p-2.5 rounded-md lg:rounded-xl transition-colors duration-300"
         :class="layoutStore.navigationClass('dark-transprant-background-hover')"
       >
         <h3

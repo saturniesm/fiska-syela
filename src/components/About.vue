@@ -5,8 +5,9 @@ const layoutStore = useLayoutStore()
 </script>
 
 <template>
+  <!-- lg:px-16 -->
   <article
-    class="flex flex-col gap-6 text-justify text-sm/6 text-hint/60 px-16 pt-16 group transition-colors duration-600"
+    class="flex flex-col gap-6 text-justify text-sm/6 text-hint/60 pt-10 lg:pt-16 group transition-colors duration-600"
   >
     <p class="text-justify">
       I am a Frontend Developer with 2 years of experience, specializing in

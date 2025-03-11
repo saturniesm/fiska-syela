@@ -6,6 +6,8 @@ export type NavigationType =
   | 'text'
   | 'border'
   | 'text-dark'
+  | 'underline'
+  | 'underline-hover'
   | 'background'
   | 'bg-transparant'
   | 'text-transparant'

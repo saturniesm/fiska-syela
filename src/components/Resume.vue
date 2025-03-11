@@ -54,10 +54,11 @@ const resumes = [
 </script>
 
 <template>
-  <div class="px-6 pt-16">
+  <!-- lg:not-last:px-6  -->
+  <div class="pt-10 lg:pt-16 relative">
     <ol class="relative border-s border-hint/5">
       <li
-        class="mb-4 ms-4 px-6 py-4 rounded-xl group transition-colors duration-300"
+        class="mb-4 ms-4 px-2.5 lg:px-6 py-2 lg:py-4 rounded-md lg:rounded-xl group transition-colors duration-300"
         :class="layoutStore.navigationClass('bg-transparant-hover')"
         v-for="resume in resumes"
       >
@@ -83,10 +84,10 @@ const resumes = [
             <span class="cursor-text">{{ item }}</span>
           </li>
         </ul>
-        <div class="flex flex-row gap-2.5 mt-6 !cursor-default">
+        <div class="flex flex-row gap-2 lg:gap-2.5 mt-6 !cursor-default flex-wrap sm:flex-row">
           <div
             v-for="item in resume.skill"
-            class="border small-scale-hover border-hint/5 hover:border-hint/10 px-4 py-1.5 rounded-md text-sm transition-colors duration-600"
+            class="border small-scale-hover border-hint/5 hover:border-hint/10 px-4 py-1.5 rounded-md text-xs lg:text-sm transition-colors duration-600"
             :class="[
               layoutStore.navigationClass('border-secondary-hover'),
               layoutStore.navigationClass('dark-transprant-background'),

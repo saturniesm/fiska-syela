@@ -85,25 +85,27 @@ onUnmounted(() => {
       background: layoutStore.cursorGradient,
     }"
   ></div>
-  <main class="p-[6%] lg:grid lg:grid-cols-12 lg:px-[6%] font-sans lg:h-screen overflow-hidden">
+  <main class="lg:grid lg:grid-cols-12 px-[6%] font-sans h-screen lg:overflow-hidden">
     <section
-      class="flex flex-col gap-8 lg:col-span-4 lg:flex lg:flex-col lg:pt-[70%] lg:h-[70vh] lg:items-start lg:justify-center lg:gap-20 lg:sticky lg:top-1/2 lg:-translate-y-1/2"
+      class="col-span-4 flex flex-col pt-[6%] lg:pt-[70%] lg:h-[70vh] h-fit gap-4 items-start justify-center lg:gap-20 lg:sticky lg:top-1/2 lg:-translate-y-1/2"
     >
       <Me />
     </section>
     <section
-      class="lg:col-span-8 lg:flex lg:flex-col lg:overflow-y-auto lg:h-screen lg:pr-4"
+      class="col-span-8 items-center flex flex-col lg:overflow-y-auto h-screen"
       id="layoutNav"
     >
-      <section id="aboutme">
-        <About />
-      </section>
-      <section id="experience">
-        <Resume />
-      </section>
-      <section id="project">
-        <Project />
-      </section>
+      <div class="w-[90%] mx-auto">
+        <section id="aboutme" class="pr-2 lg:pr-4">
+          <About />
+        </section>
+        <section id="experience">
+          <Resume />
+        </section>
+        <section id="project">
+          <Project />
+        </section>
+      </div>
     </section>
   </main>
 </template>

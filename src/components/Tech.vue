@@ -48,8 +48,8 @@ const setActiveNavigation = (nav: TechNav) => {
 </script>
 
 <template>
-  <section class="flex gap-12 w-full text-white text-sm">
-    <nav class="w-1/4 -mx-10">
+  <section class="flex lg:flex-row flex-col gap-4 lg:gap-8 w-full text-white text-sm">
+    <nav class="w-1/4 lg:block hidden">
       <ul>
         <li
           v-for="project in projectList"
@@ -62,7 +62,7 @@ const setActiveNavigation = (nav: TechNav) => {
           @click="setActiveNavigation(project.id as TechNav)"
         >
           <span
-            class="shrink-0 min-w-fit small-scale-hover"
+            class="shrink-0 min-w-fit small-scale-hover whitespace-nowrap"
             :class="[
               actNavigation === project.id ? layoutStore.navigationClass('text') : '',
               actNavigation === project.id ? 'font-semibold' : '',
@@ -73,15 +73,54 @@ const setActiveNavigation = (nav: TechNav) => {
         </li>
       </ul>
     </nav>
-    <article class="w-full">
-      <LSM v-if="actNavigation === TECHNOLOGY.LSM" />
-      <Sygap v-else-if="actNavigation === TECHNOLOGY.SYGAP" />
-      <Digi v-else-if="actNavigation === TECHNOLOGY.DIGI" />
-      <Eproc v-else-if="actNavigation === TECHNOLOGY.EPROC" />
-      <Imaps v-else-if="actNavigation === TECHNOLOGY.IMAPS" />
-      <Grantha v-else-if="actNavigation === TECHNOLOGY.GRANTHA" />
+
+    <nav class="lg:hidden block w-full">
+      <ul class="flex max-w-[28rem] overflow-x-auto">
+        <li
+          v-for="project in projectList"
+          :key="project.label"
+          @click="setActiveNavigation(project.id as TechNav)"
+          class="group border-b-2 pb-1"
+          :class="[
+            actNavigation === project.id
+              ? layoutStore.navigationClass('underline')
+              : 'border-hint/20',
+          ]"
+        >
+          <span
+            class="shrink-0 whitespace-nowrap min-w-max small-scale-hover text-hint/40 transition-colors duration-400 px-2"
+            :class="[
+              actNavigation === project.id ? layoutStore.navigationClass('text') : '',
+              actNavigation === project.id ? 'font-semibold' : '',
+              layoutStore.navigationClass('text-group-hover'),
+            ]"
+          >
+            {{ project.label }}
+          </span>
+        </li>
+      </ul>
+    </nav>
+
+    <article class="w-full lg:min-h-[28rem]">
+      <Transition name="fade" mode="out-in">
+        <LSM v-if="actNavigation === TECHNOLOGY.LSM" />
+        <Sygap v-else-if="actNavigation === TECHNOLOGY.SYGAP" />
+        <Digi v-else-if="actNavigation === TECHNOLOGY.DIGI" />
+        <Eproc v-else-if="actNavigation === TECHNOLOGY.EPROC" />
+        <Imaps v-else-if="actNavigation === TECHNOLOGY.IMAPS" />
+        <Grantha v-else-if="actNavigation === TECHNOLOGY.GRANTHA" />
+      </Transition>
     </article>
   </section>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

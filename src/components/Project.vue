@@ -20,12 +20,12 @@ const navs = [
 </script>
 
 <template>
-  <div class="px-16 flex flex-col gap-12 py-16">
-    <div class="flex gap-8 text-sm">
+  <div class="flex flex-col gap-6 lg:gap-8 py-10 lg:py-16">
+    <div class="flex gap-2 lg:gap-6 text-sm">
       <button
         v-for="nav in navs"
         type="button"
-        class="px-5 py-2 rounded-full border focus:outline-none cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
+        class="text-xs lg:text-sm px-2 lg:px-5 py-2 rounded-full border focus:outline-none cursor-pointer transition-transform duration-300 ease-in-out hover:scale-105"
         :class="[
           layoutStore.project === nav.id
             ? layoutStore.navigationClass('bg-transparant')
