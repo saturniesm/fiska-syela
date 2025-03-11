@@ -86,7 +86,7 @@ const resumes = [
         <div class="flex flex-row gap-2.5 mt-6 !cursor-default">
           <div
             v-for="item in resume.skill"
-            class="border border-hint/5 hover:border-hint/10 px-4 py-1.5 rounded-md text-sm text-hint"
+            class="border small-scale-hover border-hint/5 hover:border-hint/10 px-4 py-1.5 rounded-md text-sm text-hint"
             :class="[
               layoutStore.navigationClass('bg-transparant'),
               layoutStore.navigationClass('border-secondary-hover'),

@@ -56,3 +56,7 @@ li {
 .scale-hover {
   @apply transition-transform duration-200 hover:scale-130 origin-left;
 }
+
+.small-scale-hover {
+  @apply transition-transform duration-200 hover:scale-110;
+}
