@@ -17,6 +17,16 @@ export const useLayoutStore = defineStore('layout', () => {
         [NAVIGATION.PROJECT]: 'text-primary-pink',
         [NAVIGATION.EXP]: 'text-primary-purple',
       },
+      'text-group-hover': {
+        [NAVIGATION.ABOUT]: 'group-hover:text-primary-green',
+        [NAVIGATION.PROJECT]: 'group-hover:text-primary-pink',
+        [NAVIGATION.EXP]: 'group-hover:text-primary-purple',
+      },
+      'text-light-group-hover': {
+        [NAVIGATION.ABOUT]: 'group-hover:text-acc-green',
+        [NAVIGATION.PROJECT]: 'group-hover:text-acc-pink',
+        [NAVIGATION.EXP]: 'group-hover:text-acc-purple',
+      },
       'text-transparant': {
         [NAVIGATION.ABOUT]: 'text-primary-green/60',
         [NAVIGATION.PROJECT]: 'text-primary-pink/60',
@@ -32,6 +42,11 @@ export const useLayoutStore = defineStore('layout', () => {
         [NAVIGATION.PROJECT]: 'hover:border-primary-pink',
         [NAVIGATION.EXP]: 'hover:border-primary-purple',
       },
+      'border-secondary-hover': {
+        [NAVIGATION.ABOUT]: 'group-hover:border-primary-green',
+        [NAVIGATION.PROJECT]: 'group-hover:border-primary-pink',
+        [NAVIGATION.EXP]: 'group-hover:border-primary-purple',
+      },
       background: {
         [NAVIGATION.ABOUT]: 'bg-primary-green',
         [NAVIGATION.PROJECT]: 'bg-primary-pink',
@@ -41,6 +56,16 @@ export const useLayoutStore = defineStore('layout', () => {
         [NAVIGATION.ABOUT]: 'bg-secondary-green',
         [NAVIGATION.PROJECT]: 'bg-secondary-pink',
         [NAVIGATION.EXP]: 'bg-secondary-purple',
+      },
+      'bg-transparant-hover': {
+        [NAVIGATION.ABOUT]: 'hover:bg-primary-green/10',
+        [NAVIGATION.PROJECT]: 'hover:bg-primary-pink/10',
+        [NAVIGATION.EXP]: 'hover:bg-primary-purple/10',
+      },
+      'bg-transparant-group-hover': {
+        [NAVIGATION.ABOUT]: 'group-hover:bg-primary-green/20',
+        [NAVIGATION.PROJECT]: 'group-hover:bg-primary-pink/20',
+        [NAVIGATION.EXP]: 'group-hover:bg-primary-purple/20',
       },
       'bg-transparant': {
         [NAVIGATION.ABOUT]: 'bg-primary-green/15',

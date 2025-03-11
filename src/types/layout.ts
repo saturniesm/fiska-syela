@@ -10,6 +10,11 @@ export type NavigationType =
   | 'text-transparant'
   | 'border-hover'
   | 'dark-background'
+  | 'bg-transparant-hover'
+  | 'text-group-hover'
+  | 'text-light-group-hover'
+  | 'bg-transparant-group-hover'
+  | 'border-secondary-hover'
 
 export type TechNav = 'imaps' | 'eproc' | 'lsm' | 'eproc' | 'digi' | 'grantha'
 

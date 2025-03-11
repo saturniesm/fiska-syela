@@ -58,7 +58,7 @@ const resumes = [
     <ol class="relative border-s border-hint/5">
       <li
         class="mb-4 ms-4 px-6 py-4 hover:rounded-xl group"
-        :class="`hover:${layoutStore.navigationClass('bg-transparant')}`"
+        :class="layoutStore.navigationClass('bg-transparant-hover')"
         v-for="resume in resumes"
       >
         <div
@@ -70,12 +70,14 @@ const resumes = [
           >{{ resume.time }}</time
         >
         <h3
-          class="font-semibold text-hint text-lg mb-2 !cursor-text group-hover:text-primary-purple"
+          class="font-semibold text-hint text-lg mb-2 !cursor-text"
+          :class="layoutStore.navigationClass('text-group-hover')"
         >
           {{ resume.title }}
         </h3>
         <ul
-          class="flex flex-col gap-2 text-sm text-hint/60 text-justify cursor-text group-hover:text-acc-purple"
+          class="flex flex-col gap-2 text-sm text-hint/60 text-justify cursor-text"
+          :class="layoutStore.navigationClass('text-light-group-hover')"
         >
           <li v-for="item in resume.desc" :key="item" class="!cursor-text">
             <span class="cursor-text">{{ item }}</span>
@@ -84,10 +86,19 @@ const resumes = [
         <div class="flex flex-row gap-2.5 mt-6 !cursor-default">
           <div
             v-for="item in resume.skill"
-            :class="[layoutStore.navigationClass('bg-transparant'), 'bg-opacity-10']"
-            class="border border-hint/5 hover:border-hint/10 px-4 py-1.5 rounded-md text-sm text-hint group-hover:border-secondary-purple group-hover:bg-secondary-purple/20"
+            class="border border-hint/5 hover:border-hint/10 px-4 py-1.5 rounded-md text-sm text-hint"
+            :class="[
+              layoutStore.navigationClass('bg-transparant'),
+              layoutStore.navigationClass('border-secondary-hover'),
+              layoutStore.navigationClass('bg-transparant-group-hover'),
+            ]"
           >
-            <span class="group-hover:text-acc-purple" :class="layoutStore.navigationClass('text')">
+            <span
+              :class="[
+                layoutStore.navigationClass('text'),
+                layoutStore.navigationClass('text-light-group-hover'),
+              ]"
+            >
               {{ item }}
             </span>
           </div>
