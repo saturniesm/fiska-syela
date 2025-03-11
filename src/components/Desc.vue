@@ -45,16 +45,27 @@ const descriptions = [
 </script>
 
 <template>
-  <section class="flex flex-col gap-10 w-full">
-    <article v-for="desc in descriptions" :key="desc.title" class="flex gap-2 w-full">
-      <figure class="w-1/3">
+  <section class="flex flex-col gap-6 w-full transition-colors duration-600">
+    <article v-for="desc in descriptions" :key="desc.title" class="flex gap-2 w-full group">
+      <figure class="w-1/4">
         <img :src="desc.img" :alt="desc.title" class="w-full" />
       </figure>
-      <div class="flex flex-col text-sm w-2/3 gap-3">
-        <h3 class="font-semibold text-lg leading-none" :class="layoutStore.navigationClass('text')">
+      <div
+        class="flex flex-col text-sm w-3/4 gap-4 p-4 rounded-xl transition-colors duration-300"
+        :class="layoutStore.navigationClass('dark-transprant-background-hover')"
+      >
+        <h3
+          class="font-semibold text-lg leading-none text-hint transition-colors duration-600"
+          :class="[layoutStore.navigationClass('text-group-hover')]"
+        >
           {{ desc.title }}
         </h3>
-        <p class="text-justify text-sm text-hint/80">{{ desc.desc }}</p>
+        <p
+          class="text-justify text-sm text-hint/60 transition-colors duration-600"
+          :class="[layoutStore.navigationClass('text-light-group-hover')]"
+        >
+          {{ desc.desc }}
+        </p>
         <ul class="flex flex-wrap gap-2 text-sm">
           <li
             v-for="skill in desc.skill"
@@ -63,10 +74,13 @@ const descriptions = [
           >
             <Icon
               icon="material-symbols-light:play-arrow-outline-rounded"
-              class="w-6 h-6"
-              :class="layoutStore.navigationClass('text')"
+              class="w-6 h-6 text-hint/40 transition-colors duration-600"
+              :class="layoutStore.navigationClass('text-group-hover')"
             />
-            <span class="-ml-0.5 text-hint">
+            <span
+              class="-ml-0.5 text-hint transition-colors duration-600"
+              :class="layoutStore.navigationClass('text-light-group-hover')"
+            >
               {{ skill }}
             </span>
           </li>

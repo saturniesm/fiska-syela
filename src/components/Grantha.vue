@@ -6,7 +6,7 @@ const layoutStore = useLayoutStore()
 
 <template>
   <div class="flex flex-col gap-4 w-full">
-    <h5 class="text-lg font-semibold" :class="[layoutStore.navigationClass('text')]">Grantha</h5>
+    <h5 class="text-lg font-bold" :class="[layoutStore.navigationClass('text')]">Grantha</h5>
     <p class="tracking-wide text-sm text-hint/80">
       My contribution to Grantha was small but focused on improving the system's functionality and
       stability. I worked on:

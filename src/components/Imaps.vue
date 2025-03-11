@@ -6,7 +6,7 @@ const layoutStore = useLayoutStore()
 
 <template>
   <div class="flex flex-col gap-4 w-full">
-    <h5 class="text-lg font-semibold" :class="[layoutStore.navigationClass('text')]">IMAPS</h5>
+    <h5 class="text-lg font-bold" :class="[layoutStore.navigationClass('text')]">IMAPS</h5>
     <p class="tracking-wide text-sm text-hint/80">
       Jumping into this project without any team experience in Angular meant I had to establish a
       solid, scalable code structure from scratch.

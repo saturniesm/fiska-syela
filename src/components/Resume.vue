@@ -57,7 +57,7 @@ const resumes = [
   <div class="px-6 pt-16">
     <ol class="relative border-s border-hint/5">
       <li
-        class="mb-4 ms-4 px-6 py-4 hover:rounded-xl group"
+        class="mb-4 ms-4 px-6 py-4 rounded-xl group transition-colors duration-300"
         :class="layoutStore.navigationClass('bg-transparant-hover')"
         v-for="resume in resumes"
       >
@@ -66,17 +66,17 @@ const resumes = [
           :class="layoutStore.navigationClass('background')"
         ></div>
         <time
-          class="mb-1 text-sm font-medium leading-none text-hint/70 !cursor-text group-hover:text-hint/30"
+          class="mb-1 text-sm font-medium leading-none text-hint/70 !cursor-text group-hover:text-hint/30 transition-colors duration-400"
           >{{ resume.time }}</time
         >
         <h3
-          class="font-semibold text-hint text-lg mb-2 !cursor-text"
+          class="font-semibold text-hint text-lg mb-2 !cursor-text transition-colors duration-400"
           :class="layoutStore.navigationClass('text-group-hover')"
         >
           {{ resume.title }}
         </h3>
         <ul
-          class="flex flex-col gap-2 text-sm text-hint/60 text-justify cursor-text"
+          class="flex flex-col gap-2 transition-colors duration-600 text-sm text-hint/60 text-justify cursor-text"
           :class="layoutStore.navigationClass('text-light-group-hover')"
         >
           <li v-for="item in resume.desc" :key="item" class="!cursor-text">
@@ -86,16 +86,17 @@ const resumes = [
         <div class="flex flex-row gap-2.5 mt-6 !cursor-default">
           <div
             v-for="item in resume.skill"
-            class="border small-scale-hover border-hint/5 hover:border-hint/10 px-4 py-1.5 rounded-md text-sm text-hint"
+            class="border small-scale-hover border-hint/5 hover:border-hint/10 px-4 py-1.5 rounded-md text-sm transition-colors duration-600"
             :class="[
-              layoutStore.navigationClass('bg-transparant'),
               layoutStore.navigationClass('border-secondary-hover'),
+              layoutStore.navigationClass('dark-transprant-background'),
               layoutStore.navigationClass('bg-transparant-group-hover'),
             ]"
           >
             <span
+              class="transition-colors duration-600 text-hint/80"
               :class="[
-                layoutStore.navigationClass('text'),
+                // layoutStore.navigationClass('text-dark'),
                 layoutStore.navigationClass('text-light-group-hover'),
               ]"
             >

@@ -5,6 +5,7 @@ export type Project = 'project' | 'desc'
 export type NavigationType =
   | 'text'
   | 'border'
+  | 'text-dark'
   | 'background'
   | 'bg-transparant'
   | 'text-transparant'
@@ -12,9 +13,13 @@ export type NavigationType =
   | 'dark-background'
   | 'bg-transparant-hover'
   | 'text-group-hover'
+  | 'text-hover'
   | 'text-light-group-hover'
   | 'bg-transparant-group-hover'
   | 'border-secondary-hover'
+  | 'text-dark-group-hover'
+  | 'dark-transprant-background'
+  | 'dark-transprant-background-hover'
 
 export type TechNav = 'imaps' | 'eproc' | 'lsm' | 'eproc' | 'digi' | 'grantha'
 

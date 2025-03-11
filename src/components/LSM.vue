@@ -6,7 +6,7 @@ const layoutStore = useLayoutStore()
 
 <template>
   <div class="flex flex-col gap-4 w-full">
-    <h5 class="text-lg font-semibold" :class="[layoutStore.navigationClass('text')]">LSM</h5>
+    <h5 class="text-lg font-bold" :class="[layoutStore.navigationClass('text')]">LSM</h5>
     <p class="tracking-wide text-sm text-hint/80">
       This was my first major frontend project, where I worked hands-on with Nuxt. Beyond just
       coding, I gained a deep understanding of how frontend development truly works—not just writing

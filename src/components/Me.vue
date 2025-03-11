@@ -106,16 +106,21 @@ onMounted(typeEffect)
 
 <template>
   <header class="flex flex-col gap-2 text-hint tracking-wide">
-    <h1 class="text-6xl font-bold tracking-normal">Fiska Syela</h1>
-    <h2 class="text-2xl font-semibold flex gap-2" :class="layoutStore.navigationClass('text')">
-      <span>{{ jobTitle }}<span class="animate-blink text-hint/40">|</span></span>
+    <h1 class="text-3xl lg:text-6xl font-bold tracking-normal">Fiska Syela</h1>
+    <h2
+      class="text-lg lg:text-2xl font-semibold flex gap-2"
+      :class="layoutStore.navigationClass('text')"
+    >
+      <span
+        >{{ jobTitle }}<span class="animate-blink text-hint/40 text-lg lg:text-2xl">|</span></span
+      >
     </h2>
-    <p class="text-sm text-hint/80 font-light lg:w-64">
+    <p class="text-xs lg:text-sm text-hint/80 font-light lg:w-64">
       Focus on building scalable, fast, and intuitive web applications.
     </p>
   </header>
 
-  <nav aria-label="Main Navigation tracking-widest">
+  <nav aria-label="Main Navigation tracking-widest" class="hidden lg:block">
     <ul class="flex flex-col gap-7 pl-2">
       <li
         v-for="nav in navigation"
@@ -136,8 +141,12 @@ onMounted(typeEffect)
     </ul>
   </nav>
 
-  <ul class="flex items-end gap-5">
-    <li v-for="social in socialMedia" :class="layoutStore.navigationClass('text')">
+  <ul class="flex items-end gap-5 group">
+    <li
+      v-for="social in socialMedia"
+      class="text-hint/60"
+      :class="layoutStore.navigationClass('text-hover')"
+    >
       <a :href="social.link" target="_blank" rel="noopener noreferrer" :aria-label="social.label">
         <Icon :icon="social.icon" class="w-6 h-6 scale-hover" />
       </a>

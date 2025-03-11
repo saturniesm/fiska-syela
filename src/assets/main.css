@@ -2,15 +2,15 @@
 
 @theme {
   --color-primary-green: #d0ff5f;
-  --color-secondary-green: #b8ff11;
+  --color-secondary-green: #a1e00d;
   --color-acc-green: #e8fdb8;
 
   --color-primary-purple: #8d7eff;
-  --color-secondary-purple: #5645d6;
+  --color-secondary-purple: #402ec7;
   --color-acc-purple: #cec9ff;
 
   --color-primary-pink: #b97fef;
-  --color-secondary-pink: #a13dff;
+  --color-secondary-pink: #812ad3;
   --color-acc-pink: #ead2ff;
 
   --color-background: #202020;
@@ -26,7 +26,7 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background-color: #171717;
+  background-color: #161616;
 }
 
 /* Hide scrollbar globally */

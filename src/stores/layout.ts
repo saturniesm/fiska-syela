@@ -17,10 +17,25 @@ export const useLayoutStore = defineStore('layout', () => {
         [NAVIGATION.PROJECT]: 'text-primary-pink',
         [NAVIGATION.EXP]: 'text-primary-purple',
       },
+      'text-dark': {
+        [NAVIGATION.ABOUT]: 'text-secondary-green',
+        [NAVIGATION.PROJECT]: 'text-secondary-pink',
+        [NAVIGATION.EXP]: 'text-secondary-purple',
+      },
+      'text-hover': {
+        [NAVIGATION.ABOUT]: 'hover:text-primary-green',
+        [NAVIGATION.PROJECT]: 'hover:text-primary-pink',
+        [NAVIGATION.EXP]: 'hover:text-primary-purple',
+      },
       'text-group-hover': {
         [NAVIGATION.ABOUT]: 'group-hover:text-primary-green',
         [NAVIGATION.PROJECT]: 'group-hover:text-primary-pink',
         [NAVIGATION.EXP]: 'group-hover:text-primary-purple',
+      },
+      'text-dark-group-hover': {
+        [NAVIGATION.ABOUT]: 'group-hover:text-secondary-green',
+        [NAVIGATION.PROJECT]: 'group-hover:text-secondary-pink',
+        [NAVIGATION.EXP]: 'group-hover:text-secondary-purple',
       },
       'text-light-group-hover': {
         [NAVIGATION.ABOUT]: 'group-hover:text-acc-green',
@@ -56,6 +71,16 @@ export const useLayoutStore = defineStore('layout', () => {
         [NAVIGATION.ABOUT]: 'bg-secondary-green',
         [NAVIGATION.PROJECT]: 'bg-secondary-pink',
         [NAVIGATION.EXP]: 'bg-secondary-purple',
+      },
+      'dark-transprant-background': {
+        [NAVIGATION.ABOUT]: 'bg-secondary-green/5',
+        [NAVIGATION.PROJECT]: 'bg-secondary-pink/5',
+        [NAVIGATION.EXP]: 'bg-secondary-purple/5',
+      },
+      'dark-transprant-background-hover': {
+        [NAVIGATION.ABOUT]: 'group-hover:bg-secondary-green/5',
+        [NAVIGATION.PROJECT]: 'group-hover:bg-secondary-pink/5',
+        [NAVIGATION.EXP]: 'group-hover:bg-secondary-purple/5',
       },
       'bg-transparant-hover': {
         [NAVIGATION.ABOUT]: 'hover:bg-primary-green/10',

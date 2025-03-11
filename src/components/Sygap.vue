@@ -6,7 +6,7 @@ const layoutStore = useLayoutStore()
 
 <template>
   <div class="flex flex-col gap-4 w-full">
-    <h5 class="text-lg font-semibold" :class="[layoutStore.navigationClass('text')]">Sygap</h5>
+    <h5 class="text-lg font-bold" :class="[layoutStore.navigationClass('text')]">Sygap</h5>
     <p class="tracking-wide text-sm text-hint/80">
       This project was more than just writing code—I built a Vue.js boilerplate to standardize
       structure and boost development efficiency. By setting clear coding standards, I ensured

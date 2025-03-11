@@ -85,13 +85,16 @@ onUnmounted(() => {
       background: layoutStore.cursorGradient,
     }"
   ></div>
-  <main class="lg:grid lg:grid-cols-12 px-[6%] font-sans h-screen overflow-hidden">
+  <main class="p-[6%] lg:grid lg:grid-cols-12 lg:px-[6%] font-sans lg:h-screen overflow-hidden">
     <section
-      class="col-span-4 flex flex-col pt-[70%] h-[70vh] items-start justify-center gap-20 sticky top-1/2 -translate-y-1/2"
+      class="flex flex-col gap-8 lg:col-span-4 lg:flex lg:flex-col lg:pt-[70%] lg:h-[70vh] lg:items-start lg:justify-center lg:gap-20 lg:sticky lg:top-1/2 lg:-translate-y-1/2"
     >
       <Me />
     </section>
-    <section class="col-span-8 flex flex-col overflow-y-auto h-screen pr-4" id="layoutNav">
+    <section
+      class="lg:col-span-8 lg:flex lg:flex-col lg:overflow-y-auto lg:h-screen lg:pr-4"
+      id="layoutNav"
+    >
       <section id="aboutme">
         <About />
       </section>

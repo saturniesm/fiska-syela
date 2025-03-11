@@ -6,7 +6,7 @@ const layoutStore = useLayoutStore()
 
 <template>
   <div class="flex flex-col gap-4 w-full tracking-wide">
-    <h5 class="text-lg font-semibold" :class="[layoutStore.navigationClass('text')]">Digipactum</h5>
+    <h5 class="text-lg font-bold" :class="[layoutStore.navigationClass('text')]">Digipactum</h5>
     <p class="text-justify text-sm text-hint/80">
       Working on Digipactum, I faced the challenge of building a fully dynamic frontend driven by a
       configuration database. Unlike typical applications where components and UI elements are

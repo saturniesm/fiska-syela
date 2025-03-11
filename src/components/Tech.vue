@@ -54,7 +54,7 @@ const setActiveNavigation = (nav: TechNav) => {
         <li
           v-for="project in projectList"
           :key="project.label"
-          class="py-3 px-6 border-l-2 border-hint/20 hover:border-l-2"
+          class="py-3 pl-6 pr-3 group border-l-2 border-hint/20 hover:border-l-2"
           :class="[
             layoutStore.navigationClass('border-hover'),
             actNavigation === project.id ? layoutStore.navigationClass('border') : '',
@@ -62,7 +62,12 @@ const setActiveNavigation = (nav: TechNav) => {
           @click="setActiveNavigation(project.id as TechNav)"
         >
           <span
-            :class="[actNavigation === project.id ? layoutStore.navigationClass('text') : '']"
+            class="shrink-0 min-w-fit small-scale-hover"
+            :class="[
+              actNavigation === project.id ? layoutStore.navigationClass('text') : '',
+              actNavigation === project.id ? 'font-semibold' : '',
+              layoutStore.navigationClass('text-group-hover'),
+            ]"
             >{{ project.label }}</span
           >
         </li>
