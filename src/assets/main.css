@@ -2,12 +2,21 @@
 
 @theme {
   --color-primary-green: #d0ff5f;
+  --color-secondary-green: #b8ff11;
+  --color-acc-green: #e7ffb0;
+
   --color-primary-purple: #8d7eff;
+  --color-secondary-purple: #5645d6;
+  --color-acc-purple: #cec9ff;
+
   --color-primary-pink: #b97fef;
+  --color-secondary-pink: #a13dff;
+  --color-acc-pink: #ead2ff;
+
   --color-background: #202020;
   --color-hint: #ebebeb;
   --color-mint: #202020;
-  --color-rock: #7E7E7E;
+  --color-rock: #7e7e7e;
 
   --font-inter: 'Inter', sans-serif;
 }
@@ -17,7 +26,17 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  background-color: #202020;
+  background-color: #171717;
+}
+
+/* Hide scrollbar globally */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 @layer base {

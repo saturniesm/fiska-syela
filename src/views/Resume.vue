@@ -3,44 +3,119 @@ import Me from '@/components/Me.vue'
 import About from '@/components/About.vue'
 import Resume from '@/components/Resume.vue'
 import Project from '@/components/Project.vue'
-import { nextTick, ref, watch } from 'vue'
+import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useLayoutStore } from '@/stores/layout'
+import type { Navigation } from '@/types/layout'
 
 const aboutme = ref<HTMLElement | null>(null)
 const experience = ref<HTMLElement | null>(null)
 const project = ref<HTMLElement | null>(null)
 
+const cursorX = ref<number>(0)
+const cursorY = ref<number>(0)
+const cursorVisible = ref<boolean>(true)
+
 const layoutStore = useLayoutStore()
 
-const scrollTo = (sectionId: string) => {
-  const section = document.getElementById(sectionId)
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+const autoSelectSection = () => {
+  const sections = document.querySelectorAll('#layoutNav > section')
+
+  if (!sections.length) {
+    console.error('No sections found! Check your HTML structure.')
+    return
   }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      let visibleSection = null
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          visibleSection = entry.target.id
+        }
+      })
+
+      if (visibleSection) {
+        layoutStore.setNavigation(visibleSection as Navigation)
+      }
+    },
+    { threshold: 0.5 },
+  )
+
+  sections.forEach((section) => observer.observe(section))
 }
 
-watch(
-  () => layoutStore.navigation,
-  (newVal) => {
-    scrollTo(newVal)
-  },
-  { immediate: false },
-)
+// Update cursor position
+const updateCursor = (event: MouseEvent) => {
+  cursorX.value = event.clientX
+  cursorY.value = event.clientY
+}
+
+// Hide cursor when leaving the window
+const hideCursor = () => {
+  cursorVisible.value = false
+}
+
+// Show cursor when entering the window
+const showCursor = () => {
+  cursorVisible.value = true
+}
+
+onMounted(() => {
+  autoSelectSection()
+  window.addEventListener('mousemove', updateCursor)
+  window.addEventListener('mouseleave', hideCursor)
+  window.addEventListener('mouseenter', showCursor)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('mousemove', updateCursor)
+  window.removeEventListener('mouseleave', hideCursor)
+  window.removeEventListener('mouseenter', showCursor)
+})
 </script>
 
 <template>
+  <div
+    class="custom-cursor"
+    :style="{
+      left: `${cursorX}px`,
+      top: `${cursorY}px`,
+      opacity: cursorVisible ? 1 : 0,
+      background: layoutStore.cursorGradient,
+    }"
+  ></div>
   <main class="lg:grid lg:grid-cols-12 px-[6%] font-sans h-screen overflow-hidden">
     <section
       class="col-span-4 flex flex-col pt-[70%] h-[70vh] items-start justify-center gap-20 sticky top-1/2 -translate-y-1/2"
     >
       <Me />
     </section>
-    <section class="col-span-8 flex flex-col overflow-y-auto h-screen pr-4">
-      <About id="aboutme" />
-      <Resume id="experience" />
-      <Project id="project" />
+    <section class="col-span-8 flex flex-col overflow-y-auto h-screen pr-4" id="layoutNav">
+      <section id="aboutme">
+        <About />
+      </section>
+      <section id="experience">
+        <Resume />
+      </section>
+      <section id="project">
+        <Project />
+      </section>
     </section>
   </main>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+.custom-cursor {
+  position: fixed;
+  width: 48rem;
+  height: 48rem;
+  border-radius: 50%;
+  pointer-events: none;
+  transition:
+    transform 0.1s ease-out,
+    opacity 0.2s ease-out;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+</style>

@@ -55,33 +55,39 @@ const resumes = [
 
 <template>
   <div class="px-6 pt-16">
-    <ol class="relative border-s px-6 border-hint/10">
-      <li class="mb-10 ms-4" v-for="resume in resumes">
+    <ol class="relative border-s border-hint/5">
+      <li
+        class="mb-4 ms-4 px-6 py-4 hover:rounded-xl group"
+        :class="`hover:${layoutStore.navigationClass('bg-transparant')}`"
+        v-for="resume in resumes"
+      >
         <div
           class="absolute w-2 h-2 mt-1.5 -start-1 rotate-45"
           :class="layoutStore.navigationClass('background')"
         ></div>
-        <time class="mb-1 text-sm font-medium leading-none text-hint !cursor-text">{{
-          resume.time
-        }}</time>
+        <time
+          class="mb-1 text-sm font-medium leading-none text-hint/70 !cursor-text group-hover:text-hint/30"
+          >{{ resume.time }}</time
+        >
         <h3
-          class="font-semibold text-gray-900 text-lg mb-3 !cursor-text"
-          :class="layoutStore.navigationClass('text')"
+          class="font-semibold text-hint text-lg mb-2 !cursor-text group-hover:text-primary-purple"
         >
           {{ resume.title }}
         </h3>
-        <ul class="flex flex-col gap-2 text-sm text-hint/60 text-justify cursor-text">
+        <ul
+          class="flex flex-col gap-2 text-sm text-hint/60 text-justify cursor-text group-hover:text-acc-purple"
+        >
           <li v-for="item in resume.desc" :key="item" class="!cursor-text">
             <span class="cursor-text">{{ item }}</span>
           </li>
         </ul>
         <div class="flex flex-row gap-2.5 mt-6 !cursor-default">
           <div
-            class="border border-hint/20 px-4 py-1.5 rounded-md text-sm text-hint"
             v-for="item in resume.skill"
-            :class="[layoutStore.navigationClass('bg-transparant'), 'bg-opacity-50']"
+            :class="[layoutStore.navigationClass('bg-transparant'), 'bg-opacity-10']"
+            class="border border-hint/5 hover:border-hint/10 px-4 py-1.5 rounded-md text-sm text-hint group-hover:border-secondary-purple group-hover:bg-secondary-purple/20"
           >
-            <span class="" :class="layoutStore.navigationClass('text')">
+            <span class="group-hover:text-acc-purple" :class="layoutStore.navigationClass('text')">
               {{ item }}
             </span>
           </div>

@@ -1,4 +1,4 @@
-export type Navigation = 'aboutme' | 'experience' | 'project'
+export type Navigation = 'aboutme' | 'experience' | 'project' | 'empty'
 
 export type Project = 'project' | 'desc'
 
@@ -9,6 +9,7 @@ export type NavigationType =
   | 'bg-transparant'
   | 'text-transparant'
   | 'border-hover'
+  | 'dark-background'
 
 export type TechNav = 'imaps' | 'eproc' | 'lsm' | 'eproc' | 'digi' | 'grantha'
 

@@ -96,6 +96,11 @@ const typeEffect = () => {
   setTimeout(typeEffect, speed)
 }
 
+const changeNavigation = (id: Navigation) => {
+  layoutStore.setNavigation(id)
+  layoutStore.scrollTo(id)
+}
+
 onMounted(typeEffect)
 </script>
 
@@ -120,7 +125,7 @@ onMounted(typeEffect)
           'scale-130': nav.id === layoutStore.navigation,
           'opacity-40 hover:opacity-100': nav.id !== layoutStore.navigation,
         }"
-        @click="layoutStore.setNavigation(nav.id as Navigation)"
+        @click="changeNavigation(nav.id as Navigation)"
       >
         <span
           class="w-4 h-4 rotate-45 bg-primary-green"
