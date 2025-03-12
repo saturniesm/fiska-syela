@@ -119,17 +119,19 @@ onMounted(typeEffect)
     <ul class="flex flex-col gap-7 pl-2">
       <li
         v-for="nav in navigation"
-        class="list-space scale-hover"
+        class="list-space"
         :class="{
           [`text-primary-${nav.active_color}`]: true,
-          'scale-130': nav.id === layoutStore.navigation,
           'opacity-40 hover:opacity-100': nav.id !== layoutStore.navigation,
         }"
         @click="changeNavigation(nav.id as Navigation)"
       >
         <span
-          class="w-4 h-4 rotate-45 bg-primary-green"
-          :class="colorMap[nav.active_color] || 'bg-gray-300'"
+          class="w-4 h-4 rotate-45 bg-primary-green scale-hover"
+          :class="[
+            colorMap[nav.active_color] || 'bg-gray-300',
+            { 'scale-130': nav.id === layoutStore.navigation },
+          ]"
         ></span>
         <a class="text-sm leading-none" :href="nav.ref">{{ nav.label }}</a>
       </li>
