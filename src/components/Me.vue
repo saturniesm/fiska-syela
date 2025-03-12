@@ -35,32 +35,32 @@ const navigation = [
 
 const socialMedia = [
   {
-    link: 'https://instagram.com/yourhandle',
+    link: 'https://www.instagram.com/fiskasyela',
     icon: 'mdi:instagram',
     label: 'Instagram',
   },
   {
-    link: 'https://linkedin.com/in/yourhandle',
+    link: 'https://www.linkedin.com/in/fiskahsyela/',
     icon: 'bx:bxl-linkedin',
     label: 'LinkedIn',
   },
   {
-    link: 'https://youtube.com/yourhandle',
+    link: 'https://www.youtube.com/@FiskaSyela',
     icon: 'ri:youtube-line',
     label: 'YouTube',
   },
   {
-    link: 'https://twitter.com/yourhandle',
+    link: 'https://x.com/FiskaSyela',
     icon: 'lucide:twitter',
     label: 'Twitter',
   },
   {
-    link: 'https://medium.com/@yourhandle',
+    link: 'https://medium.com/@fiskasyela',
     icon: 'mage:medium',
     label: 'Medium',
   },
   {
-    link: 'https://github.com/yourhandle',
+    link: 'https://github.com/fiskasyela',
     icon: 'hugeicons:github',
     label: 'GitHub',
   },
