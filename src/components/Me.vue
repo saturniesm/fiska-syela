@@ -106,32 +106,35 @@ onMounted(typeEffect)
 
 <template>
   <header class="flex flex-col gap-2 text-hint tracking-wide">
-    <h1 class="text-5xl lg:text-6xl font-bold tracking-normal">Fiska Syela</h1>
-    <h2 class="text-2xl font-semibold flex gap-2" :class="layoutStore.navigationClass('text')">
-      <span>{{ jobTitle }}<span class="animate-blink text-hint/40 text-2xl">|</span></span>
+    <h1 class="text-3xl lg:text-6xl font-bold tracking-normal">Fiska Syela</h1>
+    <h2
+      class="text-lg lg:text-2xl font-semibold flex gap-2"
+      :class="layoutStore.navigationClass('text')"
+    >
+      <span
+        >{{ jobTitle }}<span class="animate-blink text-hint/40 text-lg lg:text-2xl">|</span></span
+      >
     </h2>
-    <p class="text-sm text-hint/80 font-light w-64">
+    <p class="text-xs lg:text-sm text-hint/80 font-light lg:w-64">
       Focus on building scalable, fast, and intuitive web applications.
     </p>
   </header>
 
-  <nav aria-label="Main Navigation tracking-widest" class="md:block hidden">
+  <nav aria-label="Main Navigation tracking-widest" class="hidden lg:block">
     <ul class="flex flex-col gap-7 pl-2">
       <li
         v-for="nav in navigation"
-        class="list-space"
+        class="list-space scale-hover"
         :class="{
           [`text-primary-${nav.active_color}`]: true,
+          'scale-130': nav.id === layoutStore.navigation,
           'opacity-40 hover:opacity-100': nav.id !== layoutStore.navigation,
         }"
         @click="changeNavigation(nav.id as Navigation)"
       >
         <span
-          class="w-4 h-4 rotate-45 bg-primary-green scale-hover"
-          :class="[
-            colorMap[nav.active_color] || 'bg-gray-300',
-            { 'scale-130': nav.id === layoutStore.navigation },
-          ]"
+          class="w-4 h-4 rotate-45 bg-primary-green"
+          :class="colorMap[nav.active_color] || 'bg-gray-300'"
         ></span>
         <a class="text-sm leading-none" :href="nav.ref">{{ nav.label }}</a>
       </li>

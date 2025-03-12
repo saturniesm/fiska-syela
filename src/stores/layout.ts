@@ -107,8 +107,22 @@ export const useLayoutStore = defineStore('layout', () => {
         [NAVIGATION.PROJECT]: 'bg-primary-pink/15',
         [NAVIGATION.EXP]: 'bg-primary-purple/15',
       },
+      shadow: {
+        [NAVIGATION.ABOUT]: 'shadow-[0px_0px_20px_rgba(208,255,95,0.25)]',
+        [NAVIGATION.PROJECT]: 'shadow-[0px_0px_20px_rgba(141,126,255,0.25)]',
+        [NAVIGATION.EXP]: 'shadow-[0px_0px_20px_rgba(185,127,239,0.25)]',
+      },
+      'shadow-hover': {
+        [NAVIGATION.ABOUT]: 'hover:shadow-[0px_0px_20px_rgba(208,255,95,0.25)]',
+        [NAVIGATION.PROJECT]: 'hover:shadow-[0px_0px_20px_rgba(141,126,255,0.25)]',
+        [NAVIGATION.EXP]: 'hover:shadow-[0px_0px_20px_rgba(185,127,239,0.25)]',
+      },
+      'shadow-group-hover': {
+        [NAVIGATION.ABOUT]: 'group-hover:shadow-[0px_0px_20px_rgba(208,255,95,0.25)]',
+        [NAVIGATION.PROJECT]: 'group-hover:shadow-[0px_0px_20px_rgba(141,126,255,0.25)]',
+        [NAVIGATION.EXP]: 'group-hover:shadow-[0px_0px_20px_rgba(185,127,239,0.25)]',
+      },
     }
-
     return colors[type][navigation.value] || ''
   }
 
