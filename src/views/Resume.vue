@@ -85,7 +85,7 @@ onUnmounted(() => {
       background: layoutStore.cursorGradient,
     }"
   ></div>
-  <main class="lg:grid lg:grid-cols-12 px-[6%] font-sans h-screen lg:overflow-hidden">
+  <main class="lg:grid lg:grid-cols-12 px-[4%] lg:px-[6%] font-sans h-screen lg:overflow-hidden">
     <section
       class="col-span-4 flex flex-col pt-[6%] lg:pt-[70%] lg:h-[70vh] h-fit gap-4 items-start justify-center lg:gap-20 lg:sticky lg:top-1/2 lg:-translate-y-1/2"
     >
@@ -95,7 +95,7 @@ onUnmounted(() => {
       class="col-span-8 items-center flex flex-col lg:overflow-y-auto h-screen"
       id="layoutNav"
     >
-      <div class="w-[90%] mx-auto">
+      <div class="lg:w-[90%] mx-auto">
         <section id="aboutme" class="pr-2 lg:pr-4">
           <About />
         </section>

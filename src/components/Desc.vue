@@ -52,7 +52,12 @@ const descriptions = [
       class="flex lg:flex-row flex-col gap-2 w-full group"
     >
       <figure class="lg:w-1/4 lg:py-4">
-        <img :src="desc.img" :alt="desc.title" class="w-full lg:rounded-md" />
+        <img
+          :src="desc.img"
+          :alt="desc.title"
+          class="w-full lg:rounded-md transition-colors duration-600"
+          :class="[layoutStore.navigationClass('shadow-group-hover')]"
+        />
       </figure>
       <div
         class="flex flex-col text-sm lg:w-3/4 gap-4 lg:p-4 p-2.5 rounded-md lg:rounded-xl transition-colors duration-300"

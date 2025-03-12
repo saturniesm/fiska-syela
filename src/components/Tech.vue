@@ -75,7 +75,7 @@ const setActiveNavigation = (nav: TechNav) => {
     </nav>
 
     <nav class="lg:hidden block w-full">
-      <ul class="flex max-w-[28rem] overflow-x-auto">
+      <ul class="flex max-w-[90vw] lg:max-w-[28rem] overflow-x-auto">
         <li
           v-for="project in projectList"
           :key="project.label"
